@@ -76,13 +76,19 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .brand {
   text-decoration: none;
   color: var(--accent-dark);
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-size: 0.88rem;
+  font-size: 1.25rem;
 }
 
 nav {
@@ -102,6 +108,35 @@ nav a:hover {
   color: var(--text);
 }
 
+.top-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.top-icon-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff8ef;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.top-icon-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.top-icon-link:hover {
+  transform: translateY(-1px);
+  border-color: #c9b89e;
+  background: #fff2df;
+}
+
 .section {
   margin-top: 28px;
 }
@@ -117,7 +152,7 @@ nav a:hover {
   font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: 0.78rem;
+  font-size: 1.25rem;
 }
 
 h1 {
@@ -429,6 +464,16 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .top-icons {
+    flex-shrink: 0;
   }
 
   .hero {
