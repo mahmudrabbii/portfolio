@@ -1,14 +1,27 @@
     <header class="topbar">
-      <a href="#home" class="brand">Know About Me</a>
+      <a href="{{ route('home') }}" class="brand">Know About Me</a>
       <div class="topbar-right">
         <nav>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#query">Query</a>
-          <a href="#contact">Contact</a>
+                  
+          <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a>
+          <a href="{{ route('skills') }}" class="{{ request()->routeIs('skills') ? 'active' : '' }}">Skills</a>
+          <a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'active' : '' }}">Projects</a>
+          <a href="{{ route('education') }}" class="{{ request()->routeIs('education') ? 'active' : '' }}">Education</a>
+          <a href="{{ route('query') }}" class="{{ request()->routeIs('query') ? 'active' : '' }}">Query</a>
+          <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
+       
+ <!--
+        <a href="{{ route('about') }}">About</a>
+        <a href="{{ route('skills') }}">Skills</a>
+        <a href="{{ route('projects') }}">Projects</a>
+        <a href="{{ route('education') }}">Education</a>
+        <a href="{{ route('query') }}">Query</a>
+        <a href="{{ route('contact') }}">Contact</a>
+
+         -->
         </nav>
+
+
         <div class="top-icons" aria-label="Quick social links">
           <a
             class="top-icon-link"

@@ -101,11 +101,25 @@ nav a {
   text-decoration: none;
   color: var(--muted);
   font-size: 0.94rem;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 nav a:hover {
   color: var(--text);
+  background-color: var(--bg-alt);
+}
+/*
+nav a.active {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+*/
+nav a.active {
+  color: var(--accent-dark);       /* Existing text color highlight */
+  font-weight: 600;
+  background-color: var(--accent-soft); /* Optional: adds background to highlight */
+  padding: 6px 12px;               /* Gives visual padding for the highlight */
+  border-radius: 8px;              /* Rounded background */
 }
 
 .top-icons {
@@ -254,6 +268,19 @@ p {
   margin: 0;    /* optional */
 }
 
+/*
+.quick-facts li,
+
+
+.plain-list li {
+  margin-bottom: 6px;
+}
+
+.plain-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+*/
 
 .quick-facts li,
 .plain-list li {
@@ -263,6 +290,8 @@ p {
 .plain-list {
   margin: 10px 0 0;
   padding-left: 18px;
+  column-count: 2;     /* makes 2 columns */
+  column-gap: 40px;    /* space between columns 40 */
 }
 
 .skills-grid,
