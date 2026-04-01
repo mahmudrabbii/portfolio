@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QueryController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +49,5 @@ Route::get('/query', function () {
 Route::get('/contact', function () {
 	return view('pages.contact');
 })->name('contact');
+
+Route::post('/query-send', [QueryController::class, 'mailSend'])->name('query.send'); 
