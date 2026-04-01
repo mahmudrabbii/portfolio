@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Log;
 class QueryController extends Controller
 {
     public function mailSend(Request $request)
-    { Log::info('Received query form submission', ['request' => $request->all()]);exit;
+    { Log::info('Received query form submission', ['request' => $request->all()]);
         // Validate form data
-        $request->validate([
+       $data = $request->validate([
             'email' => 'required|email',
             'contact' => 'required',
             'description' => 'required'
         ]);
-
-        // Send email
+/*
+        // Send email as plain text
         Mail::raw(
             "Email: " . $request->email .
             "\nContact: " . $request->contact .
@@ -27,9 +27,16 @@ class QueryController extends Controller
                 $message->to('mahmud.rabbi0510@gmail.com')
                         ->subject('New Query From Website');
             }
-        );
+          */
+            // Send email using a blade template
+            mail::send('emailTemplate.query', $data, function($message) {
+                $message->to('your-email@example.com') // Replace with your email
+                        ->subject('New Query From Website');
+            });
 
-        // Redirect back with success message
+        
+
+        // Redirect back
         return back()->with('success', 'Query sent successfully!');
     }
 }
