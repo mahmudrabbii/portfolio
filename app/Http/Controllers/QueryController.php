@@ -30,7 +30,7 @@ class QueryController extends Controller
           */
             // Send email using a blade template
             mail::send('emailTemplate.query', $data, function($message) {
-                $message->to('your-email@example.com') // Replace with your email
+                $message->to('mahmud.rabbi0510@gmail.com') // Replace with your email
                         ->subject('New Query From Website');
             });
 
