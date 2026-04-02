@@ -334,6 +334,11 @@ p {
   border-radius: 999px;
   font-size: 0.75rem;
   font-family: "JetBrains Mono", monospace;
+
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .muted {
@@ -577,4 +582,8 @@ p {
     width: 280px;
     height: 280px;
   }
+
+
+
 }
+
