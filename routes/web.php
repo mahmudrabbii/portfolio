@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\QueryController;
 
 
@@ -15,20 +16,13 @@ use App\Http\Controllers\QueryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
-
-Route::get('/', function () {
-	return view('portfolio');
-})->name('home');
+Route::get('/', [DashboardController::class, 'forPortfolio'])->name('home');
 
 Route::get('/about', function () {
 	return view('pages.about');
 })->name('about');
+
+Route::get('/dashboard', [DashboardController::class, 'forDashboard'])->name('dashboard');
 
 Route::get('/skills', function () {
 	return view('pages.skills');

@@ -31,7 +31,7 @@
     </div>
 
     <div style="background:#fafafa;padding:12px;text-align:center;font-size:12px;color:#888;">
-        This message was sent from your website contact form.
+        This message was sent from your website contact form...
     </div>
 
 </div>

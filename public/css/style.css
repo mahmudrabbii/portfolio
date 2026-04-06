@@ -395,6 +395,116 @@ p {
   border-color: #c9b89e;
 }
 
+.stats-heading {
+  margin-bottom: 12px;
+}
+
+.stats-grid,
+.widgets-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.widgets-grid {
+  margin-top: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stats-card,
+.widget-card,
+.recent-queries {
+  padding: 18px;
+}
+
+.stats-label {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.stats-value {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--accent-dark);
+  line-height: 1.2;
+}
+
+.widget-value {
+  margin: 8px 0 4px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.widget-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.widget-list li {
+  margin-bottom: 6px;
+}
+
+.activity-graph {
+  margin: 10px 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffaf4;
+  padding: 12px;
+  height: 125px;
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.activity-graph .activity-bar {
+  position: relative;
+  flex: 1;
+  height: var(--bar-height, 10%);
+  min-height: 6px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #d97c4d 0%, #bc4d28 100%);
+  transition: transform 0.18s ease, filter 0.18s ease;
+  outline: none;
+}
+
+.activity-graph .activity-bar:hover,
+.activity-graph .activity-bar:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+}
+
+.activity-graph .activity-bar::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  background: #1e1f21;
+  color: #ffffff;
+  font-size: 0.76rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  padding: 5px 8px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+  z-index: 2;
+}
+
+.activity-graph .activity-bar:hover::after,
+.activity-graph .activity-bar:focus-visible::after {
+  opacity: 1;
+}
+
+.recent-queries {
+  margin-top: 12px;
+}
+
 .query-form {
   margin-top: 14px;
   display: grid;
@@ -543,7 +653,9 @@ p {
   .skills-grid,
   .projects-list,
   .dual-grid,
-  .contact-grid {
+  .contact-grid,
+  .stats-grid,
+  .widgets-grid {
     grid-template-columns: 1fr;
   }
 }

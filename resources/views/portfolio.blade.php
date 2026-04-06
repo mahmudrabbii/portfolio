@@ -24,7 +24,7 @@
 @include('skills')      
 
 @include('projects')      
-   
+
 @include('education')
 
 @include('queryform')
